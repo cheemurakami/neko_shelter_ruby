@@ -16,18 +16,54 @@ describe('neko') do
   end
   it("feeds neko a treat") do
     neko = Neko.new("kiwi", "black")
-    expect(neko.treat).to eq("=^-_-^=")
+    expect(neko.give_food).to eq("OKO=^-_-^=")
+  end
+  it("tests when neko is full") do
+    neko = Neko.new("kiwi", "black")
+    neko.give_food
+    neko.give_food
+    neko.give_food
+    neko.give_food
+    neko.give_food
+    expect(neko.give_food).to eq("FULL=^-_-^=")
   end
   it("adds onaka level when neko is fed") do
     neko = Neko.new("kiwi", "black")
-    neko.treat
-    neko.treat
-    neko.treat
-    neko.treat
-    neko.treat
-    neko.treat
-    expect(neko.onaka_level).to eq(6)
-    expect(neko.treat).to eq("=^-_-^=")
+    neko.give_food
+    expect(neko.onaka_level).to eq(1)
+    expect(neko.give_food).to eq("OKO=^-_-^=")
+  end
+ 
+  it("treats karikari food") do
+    neko = Neko.new("kiwi", "black")
+    neko.treat("karikari")
+    expect(neko.onaka_level).to eq(2)
+  end
+
+  it("treats wet food") do
+    neko = Neko.new("kiwi", "black")
+    neko.treat("karikari")
+    neko.treat("wet food")
+    expect(neko.onaka_level).to eq(5)
+  end
+
+  it("adds happiness level when onaka_level is more than 5") do
+    neko = Neko.new("kiwi", "black")
+    neko.treat("karikari")
+    neko.treat("wet food")
+    expect(neko.happiness_level).to eq('I am happy')
+  end
+
+  it("adds happiness level when onaka_level is more than 5") do
+    neko = Neko.new("kiwi", "black")
+    neko.give_food
+    expect(neko.happiness_level).to eq('OKO')
+  end
+
+  it("adds happiness level when onaka_level is more than 5") do
+    neko = Neko.new("kiwi", "black")
+    neko.treat("wet food")
+    expect(neko.happiness_level).to eq('I am okay')
   end
 
 

@@ -13,7 +13,7 @@ class Neko
     @stored_color
   end
 
-  def treat
+  def give_food()
     @stored_onaka_level += 1
     if(@stored_onaka_level < 5)
       "OKO=^-_-^="
@@ -22,7 +22,28 @@ class Neko
     end
   end
 
+  def treat(kind)
+    if kind == "karikari"
+      @stored_onaka_level += 2
+    elsif kind == "wet food"
+      @stored_onaka_level += 3
+    end
+  end
+
   def onaka_level
     @stored_onaka_level
   end
+  
+  def happiness_level
+    ave_level = onaka_level / 1
+    if ave_level >= 5
+      "I am happy"
+    elsif ave_level > 2
+      "I am okay"
+    else
+      "OKO"
+    end
+  end
+
+
 end

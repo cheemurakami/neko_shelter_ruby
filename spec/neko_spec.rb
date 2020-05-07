@@ -66,6 +66,26 @@ describe('neko') do
     expect(neko.happiness_level).to eq('I am okay')
   end
 
+  it("plays") do
+    neko = Neko.new("kiwi", "black")
+    neko.play
+    expect(neko.play_level).to eq(1)
+  end
+
+  it("sleeps") do
+    neko = Neko.new("kiwi", "black")
+    neko.neru
+    expect(neko.sleep_level).to eq(1)
+  end
+
+  it("adds happiness level when total level is more than 5") do
+    neko = Neko.new("kiwi", "black")
+    neko.treat("wet food")
+    neko.treat("wet food")
+    
+    expect(neko.happiness_level).to eq('I am happy')
+  end
+
 
 end
 

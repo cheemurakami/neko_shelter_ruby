@@ -31,8 +31,10 @@ class Neko
     if @stored_onaka_level < 3
       if kind == "karikari"
         @stored_onaka_level += 2
+        "Not enough!"
       elsif kind == "wet food"
         @stored_onaka_level += 3
+        "Yum yum!"
       end
     else 
       "FULL=^-_-^="
@@ -60,6 +62,7 @@ class Neko
 
   def play
     @stored_play_level += 1
+    "Meow!"
   end
 
   def sleep_level
@@ -68,10 +71,11 @@ class Neko
 
   def neru
     @stored_sleep_level += 1
+    "Zzzzzzz"
   end
 
   def clean
-    "Thank you"
+    "Thank you!"
   end
 
 end

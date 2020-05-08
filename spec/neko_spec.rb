@@ -40,6 +40,8 @@ describe('neko') do
     neko = Neko.new("kiwi", "black")
     neko.treat("karikari")
     expect(neko.onaka_level).to eq(2)
+    expect(neko.treat("karikari")).to eq("More!")
+
   end
 
   it("treats wet food") do

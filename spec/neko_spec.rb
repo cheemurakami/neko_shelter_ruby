@@ -6,10 +6,12 @@ describe('neko') do
   it("is 2")do
     expect(2).to eq(2)
   end
+
   it("gives neko a name") do
     neko = Neko.new("kiwi", "black")
-    expect(neko.name).to eq("kiwi")
+    expect(neko.stored_name).to eq("kiwi")
   end
+  
   it("gives neko a color") do
     neko = Neko.new("kiwi", "black")
     expect(neko.color).to eq("black")
@@ -83,7 +85,12 @@ describe('neko') do
     neko.treat("wet food")
     neko.treat("wet food")
     
-    expect(neko.happiness_level).to eq('I am happy')
+    expect(neko.happiness_level).to eq('I am okay')
+  end
+
+  it("cleans litter box") do
+    neko = Neko.new("kiwi", "black")
+    expect(neko.clean).to eq('Thank you')
   end
 
 

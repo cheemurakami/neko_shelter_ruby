@@ -1,4 +1,7 @@
 class Neko
+  
+  attr_reader(:stored_name)
+
   def initialize(name, color)
     @stored_name = name
     @stored_color = color
@@ -7,9 +10,9 @@ class Neko
     @stored_sleep_level = 0
   end
 
-  def name
-    @stored_name
-  end
+  # def name
+  #   @stored_name
+  # end
 
   def color
     @stored_color
@@ -65,6 +68,10 @@ class Neko
 
   def neru
     @stored_sleep_level += 1
+  end
+
+  def clean
+    "Thank you"
   end
 
 end

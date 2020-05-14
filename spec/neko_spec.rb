@@ -40,7 +40,7 @@ describe('neko') do
     neko = Neko.new("kiwi", "black")
     neko.treat("karikari")
     expect(neko.onaka_level).to eq(2)
-    expect(neko.treat("karikari")).to eq("More!")
+    expect(neko.treat("karikari")).to eq("Not enough!")
 
   end
 
@@ -92,7 +92,12 @@ describe('neko') do
 
   it("cleans litter box") do
     neko = Neko.new("kiwi", "black")
-    expect(neko.clean).to eq('Thank you')
+    expect(neko.clean).to eq('Thank you!')
+  end
+
+  it("shows nekos profile") do
+    neko = Neko.new("kiwi", "black")
+    expect(neko.profile).to eq("name: #{neko.stored_name}")
   end
 
 

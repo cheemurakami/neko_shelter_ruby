@@ -2,6 +2,8 @@ class Neko
   
   attr_reader(:stored_name)
 
+  nekos = {}
+
   def initialize(name, color)
     @stored_name = name
     @stored_color = color
@@ -76,6 +78,10 @@ class Neko
 
   def clean
     "Thank you!"
+  end
+
+  def profile
+    "name: #{@stored_name}"
   end
 
 end

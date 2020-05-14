@@ -15,6 +15,7 @@ choice = ""
 until choice == "6" do
   puts ""
   puts "Enter a number"
+  puts "0. Check your nekos profile"
   puts "1. Give food"
   puts "2. Give treat"
   puts "3. Play"
@@ -25,7 +26,9 @@ until choice == "6" do
 
   choice = gets.chomp
   puts ""
-  if choice == "1"
+  if choice == "0"
+    puts neko.profile
+  elsif choice == "1"
     puts neko.give_food
   elsif choice == "2"
     puts "Choose your treats"

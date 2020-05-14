@@ -97,7 +97,7 @@ describe('neko') do
 
   it("shows nekos profile") do
     neko = Neko.new("kiwi", "black")
-    expect(neko.profile).to eq("name: #{neko.stored_name}")
+    expect(neko.profile).to eq("Name: #{neko.stored_name}, Temper check: #{neko.happiness_level}")
   end
 
 

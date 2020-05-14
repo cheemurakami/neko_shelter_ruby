@@ -81,7 +81,7 @@ class Neko
   end
 
   def profile
-    "name: #{@stored_name}"
+    "Name: #{@stored_name}, Temper check: #{happiness_level}"
   end
 
 end
